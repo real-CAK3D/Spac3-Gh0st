@@ -115,9 +115,17 @@ The actual Pwnagotchi plugins were inspected and summarized here:
 
 Original Pwnagotchi plugins are discovered but not executed automatically because many assume bettercap, monitor mode, deauth, handshakes, and/or online credential-upload workflows. Spac3-Gh0st ports the pieces that fit the Pi cyberdeck and implements its own owned-lab passive capture lifecycle around monitor-mode adapters.
 
+## API keys
+
+The God's Eye View globe (`web/godseye-app`) reads its Google Maps key and Cesium ion token from
+the environment. Copy `.env.example` to `.env` in the project root and fill in `GOOGLE_MAPS_API_KEY`
+and `CESIUM_ION_TOKEN` (`.env` is git-ignored). The server serves them to the globe at
+`/godseye-app/config.js`. Without them the globe still loads, minus Google geocoding/3D tiles and
+Cesium ion assets.
+
 ## License
 
-The repository `LICENSE` file is MIT. Spac3-Gh0st also contains face constants and voice/personality
-concepts adapted from [Pwnagotchi](https://github.com/evilsocket/pwnagotchi), which is GPLv3. See
-[LICENSE-PWNAGOTCHI-NOTICE.md](LICENSE-PWNAGOTCHI-NOTICE.md): if you redistribute Spac3-Gh0st,
-provide the source and preserve the GPLv3 rights and notices for that material.
+Spac3-Gh0st is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
+It contains face constants and voice/personality concepts adapted from
+[Pwnagotchi](https://github.com/evilsocket/pwnagotchi), which is also GPLv3. See
+[LICENSE-PWNAGOTCHI-NOTICE.md](LICENSE-PWNAGOTCHI-NOTICE.md).
